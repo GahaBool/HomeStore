@@ -19,6 +19,10 @@ def login(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "Вы вошли в аккаунт!")
+                
+                if request.POST.get('next', None):
+                     return HttpResponseRedirect(request.GET.get('next'))
+                
                 return HttpResponseRedirect(reverse('main:index'))
     else:
         form = UserLoginFrom()
