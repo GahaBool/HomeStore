@@ -1,6 +1,6 @@
 venv/
 __pycashe__/
-
+cache/
 
 .vscode
 .idea
