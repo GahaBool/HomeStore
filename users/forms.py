@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 from users.models import User
 
 
-class UserLoginFrom(AuthenticationForm):
+class UserLoginForm(AuthenticationForm):
 
     class Meta:
         model = User
@@ -13,20 +13,6 @@ class UserLoginFrom(AuthenticationForm):
     username = forms.CharField()
     password = forms.CharField()
 
-    # username = forms.CharField(
-    #     label = 'Имя Пользователя',
-    #     widget=forms.TextInput(
-    #         attrs={"autofocus": True,
-    #         'class': 'form-control', 
-    #         'placeholder': 'Введите имя пользователя',})
-    #     )
-    # password = forms.CharField(
-    #     label = 'Пароль',
-    #     widget = forms.PasswordInput(
-    #         attrs={"autocomplete": "current-password", 
-    #         'class': 'form-control', 
-    #         'placeholder': 'Введите ваш пароль',}),
-    # )
 
 class UserRegistrationForm(UserCreationForm):
     
